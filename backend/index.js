@@ -4,7 +4,7 @@ const router = express.Router();
 //var Sequelize = require('sequelize');
 var {Sequelize, DataTypes} = require('sequelize');
 
-var sequelize = new Sequelize('postgres://postgres:12345@localhost:5432/todo', {
+var sequelize = new Sequelize('postgres://postgres:password@localhost:5432/todo', {
     logging: false,
 });
 
@@ -62,17 +62,3 @@ app.use(express.json());
 router.get('/', (req, res)=> {
     res.json()
 })
-
-//get users
-//get user
-//post new user
-//delete user
-
-//get todos
-//get todo
-//post new todo
-//delete todo
-//put change status
-
-//get todos user
-
