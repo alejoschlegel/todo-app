@@ -1,16 +1,16 @@
 const { Router } = require('express');
 const router = Router();
+const {ToDo , User} = require('../db.js')
 
 
 //get users
 router.get("/users", function (req, res) {
-    res.json(listUsers)
+    res.json(User.findAll())
 });
 
 //post new user
 router.post("/users", function (req, res) {
-    //req.body
-    res.json()
+    
 });
 
 //get user
@@ -24,9 +24,9 @@ router.delete("users", function (req, res) {
     res.json()
 });
 
-let posts = {}
+/* let posts = {}
 
-server.delete("/posts", (req, res) => {
+router.delete("/posts", (req, res) => {
     const { id } = req.body;
     let testValidityOfId = posts.find((p) => p.id === id);
   
@@ -38,7 +38,7 @@ server.delete("/posts", (req, res) => {
       posts = posts.filter((p) => p.id !== id);
       return res.json({ success: true });
     }
-  });
+  }); */
 
 //get todos
 router.get("/todos", function (req, res) {
@@ -70,6 +70,4 @@ router.get("/todos", function (req, res) {
     res.json()
 });
 
-let listUsers = function() {
-    //findAll
-}
+module.exports = router;
